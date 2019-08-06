@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-//requerir las rutas de usuario
-app.use(require('./routes/usuario'));
+//Configuración global de rutas
+app.use(require('./routes/index'));
 
-mongoose.connect(process.env.urlBD, {useNewUrlParser: true, useCreateIndex: true }, (err, res) => {
+mongoose.connect(process.env.urlBD, {useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false }, (err, res) => {
   if (err) {
       throw err;
   } else {

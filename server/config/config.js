@@ -20,4 +20,13 @@ if (process.env.NODE_ENV === 'dev') {
 }
 process.env.urlBD = urlBD;
 
+// ======================
+// Vencimiento del token
+// ======================
+// "30 days"
+process.env.CADUCIDAD_TOKEN = "30 days";
 
+// ======================
+// SEED de autenticación
+// ======================
+process.env.SEED = process.env.SEED || 'seed-desarrollo'
