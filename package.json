@@ -18,7 +18,7 @@
     "mongoose": "^5.7.5",
     "mongoose-unique-validator": "^2.0.3",
     "node-pre-gyp": "^0.13.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "eslint": "^6.1.0"
