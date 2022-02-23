@@ -1,5 +1,5 @@
 const { response } = require('express');
-const usuariosGet = (req, res) => {
+const usuariosGet = (req, res = response) => {
 
     let desde = req.query.desde || 0; // lo indicamos como parámetro en la petición
     desde = Number(desde);
