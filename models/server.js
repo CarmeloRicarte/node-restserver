@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const path = require('path');
-const bodyParser = require('body-parser');
 
 class Server {
     constructor() {
@@ -19,11 +18,8 @@ class Server {
         // CORS
         this.app.use(cors());
 
-        // parse application/x-www-form-urlencoded
-        this.app.use(bodyParser.urlencoded({ extended: false }));
-
         // parse application/json
-        this.app.use(bodyParser.json());
+        this.app.use(express.json());
 
         // habilitar la carpeta public
         // con path.resolve() solucionaoms la cadena de ubicación de la carpeta
