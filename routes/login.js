@@ -41,7 +41,7 @@ app.post('/login', (req, res) => {
         }
 
         let token = jwt.sign({
-            usuario: usuarioBD
+            usuario: usuarioBD,
         }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });
 
         res.json({
@@ -53,7 +53,7 @@ app.post('/login', (req, res) => {
     });
 });
 
-// Conmfiguraciones de Google
+// Configuraciones de Google
 async function verify(token) {
     const ticket = await client.verifyIdToken({
         idToken: token,
@@ -92,7 +92,7 @@ app.post('/google', async (req, res) => {
 
         if (usuarioBD) {
             if (usuarioBD.google === false) {
-            // si el usuario se ha registrado de forma normal    
+                // si el usuario se ha registrado de forma normal
                 return res.status(400).json({
                     ok: false,
                     err: {
@@ -100,7 +100,7 @@ app.post('/google', async (req, res) => {
                     }
                 });
             } else {
-            // si el usuario se ha registrado con Google, renovamos el token y lo regresamos
+                // si el usuario se ha registrado con Google, renovamos el token y lo regresamos
                 let token = jwt.sign({
                     usuario: usuarioBD
                 }, process.env.SEED, { expiresIn: process.env.CADUCIDAD_TOKEN });

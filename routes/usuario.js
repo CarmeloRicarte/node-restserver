@@ -1,4 +1,3 @@
-/* eslint-disable no-unreachable */
 const express = require('express');
 const bcrypt = require('bcrypt');
 const _ = require('underscore');
@@ -89,7 +88,7 @@ app.delete('/usuario/:id', [verificaToken, verificaAdminRole], function (req, re
     let id = req.params.id;
 
     // Para eliminar el registro:
-    // Usuario.findByIdAndRemove(id, (err, usuarioBorrado) => {  
+    // Usuario.findByIdAndRemove(id, (err, usuarioBorrado) => {
 
     //Cambiamos el estado a FALSE
     Usuario.findByIdAndUpdate(id, { estado: 'false' }, { new: true }, (err, usuarioBorrado) => {
